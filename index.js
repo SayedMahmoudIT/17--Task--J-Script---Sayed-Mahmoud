@@ -15,59 +15,29 @@ console.log('sortedArra')
 //---2-Most frequent item in an array-----
 
 var arr2 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
-var sortedArra2 = arr2.sort();
-var finalCount = 0;
-var item = '';
 
-document.getElementById('mostFrequentItem').innerHTML = sortedArra2
 
-console.log(sortedArra2)
-console.log('sortedArra2')
+var times = 0;
+var element = null;
 
-var countR = 0
 for (var index = 0; index < arr2.length; index++) {
-   if (arr2[index] == arr2[index - 1]) {
-      countR++; 
-      
-   } else {
-     //finalCount = countR;
-    //item = arr2[index];
-      
-      console.log(arr2[index], '-->--', countR);
-      
-      countR = 1;
 
+   var temp = arr2[index];
+   var count = 0;
+   for (var j = 0; j < arr2.length; j++) {
+      if (temp === arr2[j]) {
+         count++;
+      }
    }
-
-   // console.log(arr2[index], '---', countR);
-   console.log(item, '---', finalCount);
+   if (count >= times) {
+      times = count;
+      element = temp;
+   }
 }
-
-
+var result = element + ' : repeated  ( ' + times + ' times ) is the most frequent';
+console.log(result);
+document.getElementById('mostFrequentItem2').innerHTML = result;
 //-------------------
-/*
-const arr =  [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
-console.log(arr)
-
-const count = {};
-const repeted=0
-for (let ele of arr) {
-   if (count[ele]) {
-       count[ele] += 1;
-      console.log(count[ele] + arr[ele] +'   count')
-   } else {
-       count[ele] = 1;
-       console.log(count[ele] + arr[ele] +'   Firstcount')
-   }
-   // if(count[ele]>count[ele-1]){
-
-   // }
-}
-
-console.log(count);
-*/
-//------------------------//
-
 
 //---3-Color Order-----
 
